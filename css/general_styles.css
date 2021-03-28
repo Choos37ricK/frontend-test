@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "Circe Light";
+    src: local("Circe Light"), url("/fonts/Circe-Light.eot") format("eot"),
+        url("/fonts/Circe-Light.ttf") format("ttf"),
+        url("/fonts/Circe-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Circe Regular";
+    src: local("Circe Regular"), url("/fonts/Circe-Regular.eot") format("eot"),
+        url("/fonts/Circe-Regular.ttf") format("ttf"),
+        url("/fonts/Circe-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Circe Bold";
+    src: local("Circe Bold"), url("/fonts/Circe-Bold.eot") format("eot"),
+        url("/fonts/Circe-Bold.ttf") format("ttf"),
+        url("/fonts/Circe-Bold.woff") format("woff");
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
+
+.page {
+    flex-direction: column;
+}
+
+/* Container */
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.content-btn {
+    background-color: #fff;
+    border: 1px solid black;
+    text-transform: uppercase;
+    font-family: "Circe Regular";
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    padding: 14px 0;
+    text-align: center;
+}
+
+.logo__icon {
+    max-width: 22px;
+    max-height: 26px;
+}

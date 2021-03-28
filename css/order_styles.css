@@ -1,0 +1,455 @@
+/* Order section */
+.order {
+    background-color: #fff;
+}
+
+.order__header {
+    position: relative;
+}
+
+.order__cover {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 305px;
+}
+
+.order__head-inner {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.order__head-container {
+    height: 100%;
+    flex-direction: column;
+    padding-top: 82px;
+    align-items: flex-start;
+}
+
+.order__breadcrumbs,
+.order__title {
+    font-family: "Circe Light";
+}
+
+.order__breadcrumbs {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.breadcrumbs__link {
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.breadcrumbs__link:hover {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+.breadcrumbs__link:focus {
+    outline: none;
+}
+
+.order__title {
+    margin-top: auto;
+    margin-bottom: 75px;
+    align-self: center;
+    padding: 24px 30px;
+    background-color: #f8f7f7;
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    line-height: 0.5;
+    align-items: center;
+}
+
+.order__measurements {
+    padding-top: 70px;
+    padding-bottom: 90px;
+}
+
+.measurements__inner {
+    text-align: center;
+}
+
+.measurements__title,
+.measurements__subtitle {
+    font-family: "Circe Light";
+    font-weight: bold;
+}
+
+.measurements__title {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.measurements__subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 45px;
+    letter-spacing: 1px;
+}
+
+.measurements-block {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.measurement {
+    display: flex;
+    width: 22%;
+    margin-bottom: 50px;
+}
+
+.measurement__image {
+    height: auto;
+    max-width: 100px;
+    margin-right: 30px;
+    object-fit: contain;
+    align-self: flex-start;
+}
+
+.measurement__fields {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    font-family: "Circe Regular";
+    flex: 1;
+}
+
+.measurement__label-block {
+    display: flex;
+    align-items: flex-end;
+    height: 30%;
+}
+
+.measurement__label {
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.measurement__field {
+    text-align: left;
+}
+
+.measurement__input {
+    font-size: 1.8rem;
+    width: 78px;
+    padding: 15px 11px;
+    border: 1px solid #919191;
+    margin-right: 7px;
+}
+
+.measurement__unit {
+    font-size: 1.6rem;
+}
+
+.order__form {
+    width: 870px;
+    background-image: -moz-linear-gradient(
+        0deg,
+        rgb(23, 34, 56) 0%,
+        rgb(57, 85, 133) 50%,
+        rgb(23, 34, 56) 100%
+    );
+    background-image: -webkit-linear-gradient(
+        0deg,
+        rgb(23, 34, 56) 0%,
+        rgb(57, 85, 133) 50%,
+        rgb(23, 34, 56) 100%
+    );
+    background-image: -ms-linear-gradient(
+        0deg,
+        rgb(23, 34, 56) 0%,
+        rgb(57, 85, 133) 50%,
+        rgb(23, 34, 56) 100%
+    );
+    filter: hue-rotate(-10deg) saturate(1.3) brightness(1.2);
+    padding: 53px 100px;
+    margin: 0 auto;
+}
+
+.order__form-field {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Circe Regular";
+    color: #cdd4e0;
+    margin-bottom: 10px;
+}
+
+.order__form-label {
+    text-align: left;
+    width: 41%;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.order__form-input {
+    justify-self: flex-end;
+    width: 53%;
+    font-size: 1.6rem;
+    background: transparent;
+    border: 1px solid #cdd4e0;
+    color: #cdd4e0;
+    padding: 15px;
+    font-family: "Circe Regular";
+}
+
+.order__form-input:active {
+    border: 1px solid #cdd4e0;
+    box-shadow: 0 0 1px 1px #cdd4e0;
+}
+
+.order__form-input:focus {
+    outline: none;
+    border: 1px solid #cdd4e0;
+    box-shadow: inset 0 0 3px 0px #cdd4e0, 0 0 3px 0px #cdd4e0;
+}
+
+.order__form-input:not(:placeholder-shown):valid {
+    border: 1px solid #13e652;
+    box-shadow: inset 0 0 3px 0px #13e652, 0 0 3px 0px #13e652;
+}
+
+.order__form-input:not(:placeholder-shown):invalid {
+    border: 1px solid #e61313;
+    box-shadow: inset 0 0 3px 0px #e61313, 0 0 3px 0px #e61313;
+}
+
+.order__form-input .order__form-input::-moz-placeholder {
+    color: #cdd4e0;
+}
+
+.order__form-input:-ms-input-placeholder {
+    color: #cdd4e0;
+}
+
+.order__form-input::placeholder {
+    color: #cdd4e0;
+}
+
+.order__form-input::-webkit-input-placeholder {
+    color: #cdd4e0;
+}
+
+.order__form-textarea {
+    resize: none;
+    max-height: 300px;
+    min-height: 100px;
+}
+
+.order__form-file {
+    justify-self: flex-end;
+    width: 53%;
+}
+
+.order__form-file-title {
+    position: relative;
+    transition: ease-in-out 0.1s;
+    width: 180px;
+    font-size: 1.6rem;
+    background: transparent;
+    border: 1px dashed #cdd4e0;
+    color: #cdd4e0;
+    padding: 15px;
+    font-family: "Circe Regular";
+}
+
+.order__form-file-title:hover {
+    filter: brightness(0.8);
+    transition: ease-in-out 0.1s;
+}
+
+.order__input-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    opacity: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+}
+
+.order__input-file:hover {
+    cursor: pointer;
+}
+
+.order__form-agreement {
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.order__form-checkbox {
+    height: 14px;
+    width: 14px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.order__agreement-link {
+    text-decoration: none;
+    color: #cdd4e0;
+    border-bottom: 1px solid #cdd4e0;
+}
+
+.order__agreement-link:hover {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+.order__agreement-link:active,
+.order__agreement-link:focus {
+    color: #ce0303;
+    border-color: #ce0303;
+    outline: none;
+}
+
+.order__checkbox-label {
+    font-family: "Circe Light";
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: #cdd4e0;
+    height: 100%;
+}
+
+.order__btn-submit {
+    width: 370px;
+    padding: 20px 0;
+    background-color: #bd0009;
+    font-family: "Circe Regular";
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+    transition: ease-in-out 0.2s;
+    -webkit-transition: ease-in-out 0.2s;
+    -moz-transition: ease-in-out 0.2s;
+    -ms-transition: ease-in-out 0.2s;
+    -o-transition: ease-in-out 0.2s;
+}
+
+.order__btn-submit:hover {
+    cursor: pointer;
+    background-color: #750006;
+    transition: ease-in-out 0.2s;
+    -webkit-transition: ease-in-out 0.2s;
+    -moz-transition: ease-in-out 0.2s;
+    -ms-transition: ease-in-out 0.2s;
+    -o-transition: ease-in-out 0.2s;
+}
+
+.order__btn-submit:active,
+.order__btn-submit:focus {
+    background-color: #750006;
+    outline: none;
+}
+
+/* Offers section */
+.offers__offer {
+    width: 50%;
+    height: 345px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.offers__offer-1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.offer__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: 100%;
+}
+
+.offer__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 47px 120px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.offer__title {
+    font-family: "Circe Light";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.offer-1__top-title,
+.offer-1__main-title,
+.offer__description,
+.offer__content-btn {
+    color: #fff;
+}
+
+.offer-1__top-title {
+    font-size: 1.6rem;
+}
+
+.offer-1__main-title,
+.offer-2__main-title {
+    font-size: 2.4rem;
+}
+
+.offer__description {
+    font-size: 1.6rem;
+    font-family: "Circe Regular";
+    text-align: center;
+    line-height: 1.7;
+}
+
+.offer__content-btn {
+    width: 194px;
+    background-color: transparent;
+    border-color: #fff;
+    transition: ease-in-out 0.2s;
+}
+
+.offer__content-btn:focus {
+    outline: none;
+}
+
+.offer__content-btn:active {
+    filter: brightness(0.8);
+}
+
+.offers__offer-1:hover .content-btn {
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    transition: ease-in-out 0.2s;
+}
+
+.offers__offer-2 {
+    position: relative;
+    background-color: #e7e7e7;
+}
+
+.offer-2__main-title {
+    color: #000;
+}
+
+.offer-2__description {
+    color: #000;
+}

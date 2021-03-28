@@ -1,12 +1,779 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/general_styles.css">
+    <link rel="stylesheet" href="css/header_footer_styles.css">
+    <link rel="stylesheet" href="css/index_styles.css">
     <title>Главная</title>
 </head>
+
 <body>
-    
+    <!-- Sprites -->
+    <svg class="d-none">
+        <symbol id="phone" viewBox="0 0 51 51">
+            <g>
+                <path
+                    d="M49.202,5.582c-0.124-0.116-0.383-0.312-0.561-0.443c-3.229-2.435-8.193-5.345-12.984-5.127    c-8.022,0.37-18.684,11.196-21.761,14.506C10.82,17.829,0.801,29.253,1.019,37.273c0.033,1.337,0.314,2.754,0.836,4.21    c1.205,3.361,3.497,6.395,5.184,8.322c0,0,0.353,0.415,0.523,0.575c0.435,0.403,1.07,0.722,1.941,0.975    c0.445,0.129,0.914,0.157,1.228,0.157c0.35,0,1.028-0.035,1.645-0.265c0.844-0.315,1.448-0.676,1.854-1.108    c0.297-0.32,5.962-7.551,5.994-7.597l0.036-0.055c0.301-0.392,0.536-0.801,0.699-1.217c0.427-1.09,0.444-2.297,0.05-3.4    c-0.251-0.701-0.666-1.332-1.192-1.819l-2.66-2.485c-0.25-0.233-0.509-0.666-0.546-0.819c-0.03-0.161-0.038-0.273-0.04-0.345    L32.07,15.724c0.038-0.04,0.075-0.06,0.101-0.071c0.024,0.008,0.045,0.018,0.061,0.023c0.124,0.061,0.518,0.349,0.908,0.709    l2.662,2.459c1.399,1.301,3.575,1.624,5.272,0.796c0.605-0.295,1.057-0.699,1.27-0.886l0.12-0.097    c0.055-0.048,6.736-6.136,6.987-6.409c0.629-0.677,0.969-1.743,1.041-3.258c0.04-0.842-0.208-1.898-0.589-2.511    C49.656,6.085,49.426,5.79,49.202,5.582z M47.279,10.175c-0.346,0.341-6.415,5.882-6.733,6.172l-0.247,0.204    c-0.093,0.083-0.312,0.278-0.544,0.392c-0.608,0.296-1.4,0.18-1.917-0.3l-2.665-2.462c-0.311-0.288-1.107-0.988-1.77-1.266    c-0.442-0.184-0.827-0.271-1.274-0.272c-0.854,0.03-1.65,0.392-2.251,1.03L14.223,30.519c-0.595,0.641-0.785,1.573-0.564,2.771    c0.171,0.926,0.871,1.929,1.449,2.469l2.665,2.489c0.179,0.166,0.321,0.386,0.411,0.634c0.148,0.414,0.141,0.886-0.019,1.294    c-0.093,0.238-0.248,0.436-0.299,0.501c-0.048,0.062-0.083,0.112-0.111,0.157c-0.537,0.693-5.424,6.911-5.708,7.248    c-0.002,0.001-0.167,0.148-0.72,0.355c-0.078,0.029-0.308,0.075-0.595,0.075c-0.207,0-0.342-0.023-0.391-0.038    c-0.536-0.156-0.724-0.285-0.728-0.285c-0.097-0.097-0.264-0.299-0.293-0.333c-1.539-1.759-3.594-4.467-4.64-7.386    c-0.414-1.154-0.636-2.254-0.661-3.274c-0.149-5.479,6.413-14.541,12.076-20.635c5.662-6.095,14.221-13.3,19.7-13.552    c3.95-0.184,8.201,2.385,11.007,4.5L46.91,7.59c0.064,0.047,0.184,0.132,0.236,0.176c0.071,0.075,0.14,0.187,0.196,0.276    c0.068,0.133,0.164,0.546,0.151,0.804C47.45,9.732,47.291,10.142,47.279,10.175z" />
+            </g>
+        </symbol>
+    </svg>
+
+    <svg class="d-none">
+        <symbol id="delivery" viewBox="0 0 491.928 491.928">
+            <g>
+                <path
+                    d="M488.56,226.977l-83.433-83.433c-2.157-2.156-5.082-3.368-8.132-3.368H337.13V96.312c0-11.544-9.982-21.297-21.797-21.297  L21.297,75.015C9.554,75.015,0,84.568,0,96.312v243.949c0,11.744,9.554,21.298,21.297,21.298h34.987  c5.263,31.369,32.593,55.354,65.434,55.354s60.171-23.984,65.434-55.354h152.27c5.263,31.369,32.593,55.354,65.434,55.354  c32.847,0,60.182-23.992,65.437-55.371c0.113,0.004,0.223,0.018,0.337,0.018c11.744,0,21.297-9.554,21.297-21.297V235.108  C491.928,232.059,490.716,229.134,488.56,226.977z M392.231,163.176l62.716,62.716H337.13v-62.716H392.231z M56.459,338.56H23  V98.015l291.13,0.001V338.56H186.977c-5.662-30.888-32.76-54.375-65.259-54.375C89.22,284.185,62.121,307.672,56.459,338.56z   M121.718,393.913c-23.911,0-43.364-19.453-43.364-43.364c0-23.911,19.453-43.364,43.364-43.364  c23.911,0,43.364,19.453,43.364,43.364C165.083,374.46,145.629,393.913,121.718,393.913z M404.856,393.913  c-23.911,0-43.364-19.453-43.364-43.364c0-23.911,19.453-43.364,43.364-43.364c23.911,0,43.364,19.453,43.364,43.364  C448.221,374.46,428.767,393.913,404.856,393.913z M404.856,284.185c-32.499,0-59.597,23.487-65.259,54.375h-2.468v-89.668h131.798  v84.389C461.307,305.035,435.477,284.185,404.856,284.185z" />
+            </g>
+        </symbol>
+    </svg>
+
+    <svg class="d-none">
+        <symbol id="payment" viewBox="0 0 74 74">
+            <g>
+                <path
+                    d="m63.876 69.346h-56.99a4.891 4.891 0 0 1 -4.886-4.886v-45.333a1 1 0 0 1 1-1h60.876a4.892 4.892 0 0 1 4.886 4.886v13.38a1 1 0 0 1 -2 0v-13.38a2.889 2.889 0 0 0 -2.886-2.886h-59.876v44.333a2.89 2.89 0 0 0 2.886 2.886h56.99a2.89 2.89 0 0 0 2.886-2.886v-13.379a1 1 0 0 1 2 0v13.379a4.892 4.892 0 0 1 -4.886 4.886z" />
+                <path
+                    d="m69.327 52.076h-11.711a8.34 8.34 0 1 1 0-16.68h11.711a2.677 2.677 0 0 1 2.673 2.674v11.33a2.676 2.676 0 0 1 -2.673 2.676zm-11.711-14.676a6.34 6.34 0 1 0 0 12.68h11.711a.674.674 0 0 0 .673-.68v-11.33a.675.675 0 0 0 -.673-.674z" />
+                <path
+                    d="m3 20.127a1 1 0 0 1 -.324-1.946l38.324-13.129a7.272 7.272 0 0 1 9.63 6.88v7.195a1 1 0 1 1 -2 0v-7.195a5.273 5.273 0 0 0 -6.982-4.988l-38.324 13.129a.992.992 0 0 1 -.324.054z" />
+                <path
+                    d="m58.008 47.327a3.591 3.591 0 1 1 3.592-3.591 3.594 3.594 0 0 1 -3.592 3.591zm0-5.181a1.591 1.591 0 1 0 1.591 1.59 1.591 1.591 0 0 0 -1.591-1.59z" />
+
+            </g>
+        </symbol>
+    </svg>
+
+    <svg class="d-none">
+        <symbol id="reviews" viewBox="0 0 512 512">
+            <g>
+                <path d="M355.56,131.03V48.42H0v239.39h59.36v93.16l97.08-69.28v58.73h165.65l130.55,93.16v-93.16H512V131.03H355.56z
+                M156.44,274.84L89.36,322.7v-64.89H30V78.42h295.56v52.61H156.44V274.84z M482,340.42h-59.36v64.89l-90.94-64.89H186.44V161.03
+               h139.12h30H482V340.42z" />
+            </g>
+        </symbol>
+    </svg>
+
+    <svg class="d-none">
+        <symbol id="q-a" viewBox="0 0 490.667 490.667">
+            <g>
+                <g>
+                    <path d="M245.333,0C110.059,0,0,110.059,0,245.333s110.059,245.333,245.333,245.333s245.333-110.059,245.333-245.333
+                        S380.608,0,245.333,0z M245.333,469.333c-123.52,0-224-100.48-224-224s100.48-224,224-224s224,100.48,224,224
+                        S368.853,469.333,245.333,469.333z" />
+                </g>
+            </g>
+            <g>
+                <g>
+                    <path d="M245.333,106.667c-41.173,0-74.667,33.493-74.667,74.667v21.333c0,5.888,4.779,10.667,10.667,10.667
+                        S192,208.555,192,202.667v-21.333C192,151.936,215.915,128,245.333,128c29.419,0,53.333,23.936,53.333,53.333v16.149
+                        c0,14.251-5.547,27.648-15.637,37.739l-26.496,26.496c-14.101,14.123-21.867,32.853-21.867,52.8v16.149
+                        c0,5.888,4.779,10.667,10.667,10.667S256,336.555,256,330.667v-16.149c0-14.251,5.547-27.648,15.637-37.739l26.496-26.496
+                        C312.235,236.16,320,217.429,320,197.483v-16.149C320,140.16,286.507,106.667,245.333,106.667z" />
+                </g>
+            </g>
+            <g>
+                <g>
+                    <path d="M245.333,362.667C233.557,362.667,224,372.245,224,384c0,11.755,9.557,21.333,21.333,21.333s21.333-9.579,21.333-21.333
+                        C266.667,372.245,257.109,362.667,245.333,362.667z" />
+                </g>
+            </g>
+        </symbol>
+    </svg>
+
+    <svg class="d-none">
+        <symbol id="contacts" viewBox="-4 0 512 512.00051">
+            <g>
+                <path
+                    d="m496.660156 146.609375c-.101562-.082031-.203125-.167969-.339844-.253906l-230.871093-144.074219c-4.78125-2.980469-10.828125-3.046875-15.671875-.167969l-242.410156 144.074219c-.1875.109375-.324219.210938-.421876.304688-4.175781 2.695312-6.945312 7.378906-6.945312 12.714843v337.660157c0 8.355468 6.777344 15.132812 15.136719 15.132812h473.132812c8.359375 0 15.136719-6.777344 15.136719-15.132812v-337.660157c0-5.257812-2.679688-9.882812-6.746094-12.597656zm-63.367187 27.722656-187.132813 111.214844c-.023437.015625-.050781.015625-.074218 0l-178.21875-111.214844c-.0625-.039062-.035157-.132812.039062-.132812h365.347656c.074219 0 .101563.09375.039063.132812zm-363.175781-30.394531 187.128906-111.214844c.023437-.015625.050781-.011718.074218 0l178.21875 111.21875c.0625.035156.035157.128906-.035156.128906h-365.351562c-.070313 0-.097656-.09375-.035156-.132812zm403.089843 337.9375h-443.007812c-.039063 0-.070313-.035156-.070313-.074219v-295.507812l207.828125 129.695312c2.441407 1.519531 5.207031 2.28125 7.976563 2.28125 2.660156 0 5.320312-.703125 7.695312-2.113281l219.652344-130.546875v296.191406c0 .039063-.03125.074219-.074219.074219zm0 0" />
+            </g>
+        </symbol>
+    </svg>
+
+    <svg class="d-none">
+        <symbol id="place" viewBox="0 0 490 490">
+            <g>
+                <path d="M245.001,0C156.458,0,84.424,71.987,84.424,160.472c0,85.04,145.93,315.146,152.142,324.9
+                    c1.836,2.882,5.017,4.628,8.435,4.628c3.418,0,6.599-1.746,8.434-4.628c6.212-9.754,152.141-239.861,152.141-324.9
+                    C405.576,71.987,333.542,0,245.001,0z M245.001,461.127c-13.207-21.363-40.009-65.587-66.549-114.588
+                    c-48.429-89.418-74.027-153.758-74.027-186.067C104.424,83.015,167.487,20,245.001,20c77.514,0,140.575,63.015,140.575,140.472
+                    c0,32.309-25.599,96.649-74.027,186.067C285.009,395.539,258.207,439.764,245.001,461.127z" />
+                <path
+                    d="M244.999,76.071c-41.884,0-75.959,33.149-75.959,73.894c0,40.744,34.075,73.891,75.959,73.891s75.959-33.147,75.959-73.891
+                    C320.958,109.22,286.883,76.071,244.999,76.071z M244.999,203.855c-30.855,0-55.959-24.175-55.959-53.891
+                    c0-29.717,25.104-53.894,55.959-53.894s55.959,24.177,55.959,53.894C300.958,179.68,275.855,203.855,244.999,203.855z" />
+            </g>
+        </symbol>
+    </svg>
+
+    <div class="page d-flex">
+        <div class="head-line"></div>
+
+        <header class="header">
+            <div class="container">
+                <div class="header__inner d-flex">
+                    <div class="header__logo d-flex">
+                        <img src="img/logo.png" alt="" class="logo__name">
+                        <p class="logo__subname">меховая фабрика</p>
+                    </div>
+
+                    <div class="header__links">
+                        <nav class="header-menu d-flex">
+                            <a href="#" class="header-menu__link">
+                                <svg class="delivery__icon">
+                                    <use xlink:href="#delivery"></use>
+                                </svg>
+                                <p>Условия доставки</p>
+                            </a>
+                            <a href="#" class="header-menu__link">
+                                <svg class="payment__icon">
+                                    <use xlink:href="#payment"></use>
+                                </svg>
+                                <p>Условия оплаты</p>
+                            </a>
+                            <a href="#" class="header-menu__link">
+                                <svg class="reviews__icon">
+                                    <use xlink:href="#reviews"></use>
+                                </svg>
+                                <p>Отзывы клиентов</p>
+                            </a>
+                            <a href="#" class="header-menu__link">
+                                <svg class="q-a__icon">
+                                    <use xlink:href="#q-a"></use>
+                                </svg>
+                                <p>Вопрос-ответ</p>
+                            </a>
+                            <a href="#" class="header-menu__link">
+                                <svg class="contacts__icon">
+                                    <use xlink:href="#contacts"></use>
+                                </svg>
+                                <p>Контакты</p>
+                            </a>
+                        </nav>
+
+                        <div class="links__header-submenu d-flex">
+                            <nav class="header-submenu d-flex">
+                                <a href="#" class="header-submenu__link">Женщинам</a>
+                                <a href="#" class="header-submenu__link">Мужчинам</a>
+                                <a href="#" class="header-submenu__link">Детям</a>
+                            </nav>
+
+
+                            <button class="btn-consultation">Бесплатная консультация модельера</button>
+                            <a href="/tailoring-to-order.html" class="link-order-by-size">
+                                Закажите шубу по вашим меркам
+                            </a>
+
+
+                            <a href="tel:+79283471718" class="phone-link header__phone-link d-flex">
+                                <svg class="phone__icon">
+                                    <use xlink:href="#phone"></use>
+                                </svg>
+                                <p>+7 928 347-17-18</p>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="fur-coats-grid">
+                <div class="container">
+                    <div class="fur-coats-grid__inner">
+
+                        <div class="grid__item-1">
+                            <img src="/img/models/model-1.png" alt="" class="grid__image grid__image-1">
+                            <div class="item__content item-1__content">
+                                <div class="item__title item-1__title">Шубы <br>на любой размер</div>
+                                <div class="item__subtitle item-1__subtitle">Индивидуальный пошив по модели клиента
+                                </div>
+                                <a href="/tailoring-to-order.html" class="content-btn item-1__order-link">
+                                    Закажите тут
+                                </a>
+                                <div class="item-1__arrows">
+                                    <div class="arrows__left">
+                                        <div class="arrows__left-part-1"></div>
+                                        <div class="arrows__left-part-2"></div>
+                                    </div>
+                                    <div class="arrows__right">
+                                        <div class="arrows__right-part-1"></div>
+                                        <div class="arrows__right-part-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid__item-2">
+                            <img src="/img/models/model-2.png" alt="" class="grid__image grid__image-2">
+                            <div class="item__content item-2__content">
+                                <div class="item__title item-2__title">Норковые шубы</div>
+                                <a href="#" class="item__link">Выберите свою</a>
+                            </div>
+                        </div>
+
+                        <div class="grid__item-3">
+                            <img src="/img/models/model-3.png" alt="" class="grid__image grid__image-3">
+                            <div class="item__content item-3__content">
+                                <div class="item__title item-3__title">Шубы из астрагана</div>
+                                <a href="#" class="item__link">Купите <br> со скидкой</a>
+                            </div>
+                        </div>
+
+                        <div class="grid__item-4">
+                            <img src="/img/models/model-4.png" alt="" class="grid__image grid__image-4">
+                            <div class="item__content item-4__content">
+                                <div class="item__title item-4__title">Шубы из каракуля</div>
+                            </div>
+                        </div>
+
+                        <div class="grid__item-5">
+                            <img src="/img/models/model-5.png" alt="" class="grid__image grid__image-5">
+                            <div class="item__content item-5__content">
+                                <div class="item__title item-5__title">Мужские кожаные куртки</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="benefits">
+                <div class="container">
+                    <div class="benefits__inner d-flex">
+                        <div class="benefits__item">
+                            <div class="benefit__icon">
+                                <img class="benefit__icon-image" alt="" src="/img/benefits/benefit-1.png">
+                            </div>
+                            <div class="benefit__title">Если товара нет в наличии?</div>
+                            <div class="benefit__subtitle">Любую модель из каталога вы сможете пошить на заказ по
+                                указанной стоимости.
+                            </div>
+                        </div>
+                        <div class="benefits__item">
+                            <div class="benefit__icon">
+                                <img class="benefit__icon-image" alt="" src="/img/benefits/benefit-2.png">
+                            </div>
+                            <div class="benefit__title">Качественный мех</div>
+                            <div class="benefit__subtitle">Мы покупаем шкуры на мировых аукционах. <br> Используем
+                                только
+                                качественную фурнитуру.
+                            </div>
+                        </div>
+                        <div class="benefits__item">
+                            <div class="benefit__icon">
+                                <img class="benefit__icon-image" alt="" src="/img/benefits/benefit-3.png">
+                            </div>
+                            <div class="benefit__title">Гибкие скидки</div>
+                            <div class="benefit__subtitle">Мы продаем в кредит и рассрочку. Предоставляем скидки
+                                постоянным покупателям.
+                            </div>
+                        </div>
+                        <div class="benefits__item">
+                            <div class="benefit__icon">
+                                <img class="benefit__icon-image" alt="" src="/img/benefits/benefit-4.png">
+                            </div>
+                            <div class="benefit__title">Гарантия</div>
+                            <div class="benefit__subtitle">Обслуживаем вашу шубу 1 год! <br> Бесплатно меняем фурнитуру
+                                и
+                                ремонтируем.
+                            </div>
+                        </div>
+                        <div class="benefits__item">
+                            <div class="benefit__icon">
+                                <img class="benefit__icon-image" alt="" src="/img/benefits/benefit-5.png">
+                            </div>
+                            <div class="benefit__title">Чипирование</div>
+                            <div class="benefit__subtitle">Все наши изделия соответствуют действующему закону и имеют
+                                чип.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about">
+                <img src="img/about/bg-about.png" alt="" class="about__cover">
+                <div class="about__inner">
+                    <div class="container">
+                        <div class="section__title about__title">О фабрике</div>
+                        <div class="about__content d-flex">
+                            <div class="about-content__inner d-flex">
+                                <div class="about-content__image-block">
+                                    <img src="/img/about/about.png" alt="" class="about-content__image">
+
+                                    <div class="about-content__image-logo d-flex">
+                                        <img src="/img/about/logo-icon.png" alt="" class="logo__icon">
+                                        <img src="/img/about/logo-name.png" alt="" class="logo__name about__logo-name">
+                                        <p class="logo__subname about__logo-subname">меховая фабрика</p>
+                                    </div>
+                                </div>
+
+                                <div class="about__text d-flex">
+                                    <div class="about-text__item-1">
+                                        <p>
+                                            Пятигорская меховая фабрика Эдита с 2001 года
+                                            занимается производством элитной женской и мужской одежды из меха и кожи.
+                                            Фабрика Эдита известна качеством своих шуб, меховых и кожаных изделий.
+                                        </p>
+                                    </div>
+
+                                    <div class="about-text__item-2 d-flex">
+                                        <p>
+                                            Сырье закупается на всемирных аукционах и проходит
+                                            переработку на лучших предприятиях Италии, Америки и России.
+                                        </p>
+                                        <button class="content-btn about-text__btn">Читать больше о фабрике</button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recommend-goods">
+                <div class="container">
+                    <div class="recommend-goods__inner">
+                        <div class="section__title recommend-goods__title">Рекомендуемый товар</div>
+                        <div class="slider d-flex">
+                            <div class="slider__arrow-left">
+                                <div class="slider-arrow-left__part-1"></div>
+                                <div class="slider-arrow-left__part-2"></div>
+                            </div>
+                            <div class="slider__arrow-right">
+                                <div class="slider-arrow-right__part-1"></div>
+                                <div class="slider-arrow-right__part-2"></div>
+                            </div>
+
+                            <div class="slider__item">
+                                <div class="slider__item-container">
+                                    <img class="slider__image" alt="" src="/img/models/model-6.png">
+                                    <div class="slider__content">
+                                        <div class="slider__title">Норковые шубы</div>
+                                        <div class="slider__description">Полушубок из норки с <br> капюшоном розовый на
+                                            молнии без карманов
+                                            <div class="slider__articul">Арт. 00001234</div>
+                                        </div>
+
+                                        <div class="slider__prices">
+                                            <div class="slider__old-price">25 000</div>
+                                            <div class="slider__actual-price">22 000 &#8399;</div>
+                                        </div>
+                                    </div>
+                                    <div class="slider__item-stickers">
+                                        <div class="slider__sticker-discount">Скидка</div>
+                                        <div class="slider__sticker-new">Новинка</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider__details-link">Подробнее</a>
+                            </div>
+
+                            <div class="slider__item">
+                                <div class="slider__item-container">
+                                    <img class="slider__image" alt="" src="/img/models/model-2.png">
+                                    <div class="slider__content">
+                                        <div class="slider__title">Кожаные куртки</div>
+                                        <div class="slider__description">Полушубок из норки с капюшоном розовый на
+                                            молнии
+                                            без карманов
+                                            <div class="slider__articul">Арт. 00001234</div>
+                                        </div>
+
+                                        <div class="slider__prices">
+                                            <div class="slider__old-price">25 000</div>
+                                            <div class="slider__actual-price">22 000 &#8399;</div>
+                                        </div>
+                                    </div>
+                                    <div class="slider__item-stickers">
+                                        <div class="slider__sticker-new">Новинка</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider__details-link">Подробнее</a>
+                            </div>
+
+                            <div class="slider__item">
+                                <div class="slider__item-container">
+                                    <img class="slider__image" alt="" src="/img/models/model-5.png">
+                                    <div class="slider__content">
+                                        <div class="slider__title">Жилеты из песца</div>
+                                        <div class="slider__description">Крашенный жилет из песца. Розовый
+                                            <div class="slider__articul">Арт. 00001234</div>
+                                        </div>
+
+                                        <div class="slider__prices">
+                                            <div class="slider__old-price">25 000</div>
+                                            <div class="slider__actual-price">22 000 &#8399;</div>
+                                        </div>
+                                    </div>
+                                    <div class="slider__item-stickers">
+                                        <div class="slider__sticker-discount">Скидка</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider__details-link">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="offers">
+                <div class="offers__inner d-flex">
+                    <a href="#" class="offers__offer offers__offer-1">
+                        <img src="/img/offers/offer-1.png" alt="" class="offer__cover">
+                        <div class="offer__content">
+                            <div class="offer__title offer-1__top-title">Посетите наш</div>
+                            <div class="offer__title offer-1__main-title">Демонстрационный зал</div>
+                            <div class="offer__description">Для гостей городов Кавказких Минеральных Вод мы организуем
+                                БЕСПЛАТНЫЙ ТРАНСФЕР</div>
+                            <div class="content-btn offer__content-btn">Подробнее</div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="offers__offer offers__offer-2">
+                        <div class="offer__content">
+                            <img src="/img/offers/offer-2.png" alt="" class="offer__icon">
+                            <div class="offer__title offer-2__main-title">Клиентский сервис</div>
+                            <div class="offer__description offer-2__description">ГАРАНТИЯ ОБСЛУЖИВАНИЯ товара 1 год!
+                                <br> Обязательная
+                                примерка перед покупкой и подгон шубы под размер, <br> если она не подошла вам.
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="discount-goods">
+                <div class="container">
+                    <div class="discount-goods__inner">
+                        <div class="section__title discount-goods__title">Товары со скидкой</div>
+                        <div class="slider d-flex">
+                            <div class="slider__arrow-left">
+                                <div class="slider-arrow-left__part-1"></div>
+                                <div class="slider-arrow-left__part-2"></div>
+                            </div>
+                            <div class="slider__arrow-right">
+                                <div class="slider-arrow-right__part-1"></div>
+                                <div class="slider-arrow-right__part-2"></div>
+                            </div>
+
+                            <div class="slider__item">
+                                <div class="slider__item-container">
+                                    <img class="slider__image" alt="" src="/img/models/model-6.png">
+                                    <div class="slider__content">
+                                        <div class="slider__title">Норковые шубы</div>
+                                        <div class="slider__description">Полушубок из норки с <br> капюшоном розовый на
+                                            молнии без карманов
+                                            <div class="slider__articul">Арт. 00001234</div>
+                                        </div>
+
+                                        <div class="slider__prices">
+                                            <div class="slider__old-price">25 000</div>
+                                            <div class="slider__actual-price">22 000 &#8399;</div>
+                                        </div>
+                                    </div>
+                                    <div class="slider__item-stickers">
+                                        <div class="slider__sticker-discount">Скидка</div>
+                                        <div class="slider__sticker-new">Новинка</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider__details-link">Подробнее</a>
+                            </div>
+
+                            <div class="slider__item">
+                                <div class="slider__item-container">
+                                    <img class="slider__image" alt="" src="/img/models/model-2.png">
+                                    <div class="slider__content">
+                                        <div class="slider__title">Кожаные куртки</div>
+                                        <div class="slider__description">Полушубок из норки с капюшоном розовый на
+                                            молнии
+                                            без карманов
+                                            <div class="slider__articul">Арт. 00001234</div>
+                                        </div>
+
+                                        <div class="slider__prices">
+                                            <div class="slider__old-price">25 000</div>
+                                            <div class="slider__actual-price">22 000 &#8399;</div>
+                                        </div>
+                                    </div>
+                                    <div class="slider__item-stickers">
+                                        <div class="slider__sticker-new">Новинка</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider__details-link">Подробнее</a>
+                            </div>
+
+                            <div class="slider__item">
+                                <div class="slider__item-container">
+                                    <img class="slider__image" alt="" src="/img/models/model-5.png">
+                                    <div class="slider__content">
+                                        <div class="slider__title">Жилеты из песца</div>
+                                        <div class="slider__description">Крашенный жилет из песца. Розовый
+                                            <div class="slider__articul">Арт. 00001234</div>
+                                        </div>
+
+                                        <div class="slider__prices">
+                                            <div class="slider__old-price">25 000</div>
+                                            <div class="slider__actual-price">22 000 &#8399;</div>
+                                        </div>
+                                    </div>
+                                    <div class="slider__item-stickers">
+                                        <div class="slider__sticker-discount">Скидка</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider__details-link">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="useful-articles">
+                <div class="container">
+                    <div class="useful-articles__inner">
+                        <div class="section__title useful-articles__title">Полезные статьи</div>
+                        <div class="articles-previews d-flex">
+                            <div class="article-preview">
+                                <img src="/img/useful-articles/art-1.png" alt="" class="article-preview__cover">
+                                <div class="article-preview__content article-preview__content_transparent">
+                                    <div class="article-preview__title">Почему шуба не может стоить слишком дешево?
+                                    </div>
+                                    <button
+                                        class="content-btn article-preview__btn-about article-preview__btn-about_dark">Подробнее</button>
+                                </div>
+                            </div>
+
+                            <div class="article-preview">
+                                <img src="/img/useful-articles/art-2.png" alt="" class="article-preview__cover">
+                                <div class="article-preview__content article-preview__content_light">
+                                    <div class="article-preview__title">Почему шуба не может стоить слишком дешево?
+                                    </div>
+                                    <button
+                                        class="content-btn article-preview__btn-about article-preview__btn-about_light">Подробнее</button>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="articles-previews__more-link">Читать больше статей</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="novelty">
+                <div class="container">
+                    <div class="novelty__inner">
+                        <div class="section__title novelty__title">Новинки</div>
+                        <div class="slider d-flex">
+                            <div class="slider__arrow-left">
+                                <div class="slider-arrow-left__part-1"></div>
+                                <div class="slider-arrow-left__part-2"></div>
+                            </div>
+                            <div class="slider__arrow-right">
+                                <div class="slider-arrow-right__part-1"></div>
+                                <div class="slider-arrow-right__part-2"></div>
+                            </div>
+
+                            <div class="slider__item">
+                                <div class="slider__item-container">
+                                    <img class="slider__image" alt="" src="/img/models/model-6.png">
+                                    <div class="slider__content">
+                                        <div class="slider__title">Норковые шубы</div>
+                                        <div class="slider__description">Полушубок из норки с <br> капюшоном розовый на
+                                            молнии без карманов
+                                            <div class="slider__articul">Арт. 00001234</div>
+                                        </div>
+
+                                        <div class="slider__prices">
+                                            <div class="slider__old-price">25 000</div>
+                                            <div class="slider__actual-price">22 000 &#8399;</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider__details-link">Подробнее</a>
+                            </div>
+
+                            <div class="slider__item">
+                                <div class="slider__item-container">
+                                    <img class="slider__image" alt="" src="/img/models/model-2.png">
+                                    <div class="slider__content">
+                                        <div class="slider__title">Кожаные куртки</div>
+                                        <div class="slider__description">Полушубок из норки с капюшоном розовый на
+                                            молнии
+                                            без карманов
+                                            <div class="slider__articul">Арт. 00001234</div>
+                                        </div>
+
+                                        <div class="slider__prices">
+                                            <div class="slider__old-price">25 000</div>
+                                            <div class="slider__actual-price">22 000 &#8399;</div>
+                                        </div>
+                                    </div>
+                                    <div class="slider__item-stickers">
+                                        <div class="slider__sticker-new">Новинка</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider__details-link">Подробнее</a>
+                            </div>
+
+                            <div class="slider__item">
+                                <div class="slider__item-container">
+                                    <img class="slider__image" alt="" src="/img/models/model-5.png">
+                                    <div class="slider__content">
+                                        <div class="slider__title">Жилеты из песца</div>
+                                        <div class="slider__description">Крашенный жилет из песца. Розовый
+                                            <div class="slider__articul">Арт. 00001234</div>
+                                        </div>
+
+                                        <div class="slider__prices">
+                                            <div class="slider__old-price">25 000</div>
+                                            <div class="slider__actual-price">22 000 &#8399;</div>
+                                        </div>
+                                    </div>
+                                    <div class="slider__item-stickers">
+                                        <div class="slider__sticker-discount">Скидка</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider__details-link">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="container d-flex">
+                    <div class="footer__contacts">
+                        <div class="footer__logo d-flex">
+                            <img src="img/logo.png" alt="" class="logo__name">
+                            <p class="logo__subname">меховая фабрика</p>
+                        </div>
+
+                        <div class="footer__phones d-flex">
+                            <div class="phones__icon">
+                                <svg class="phone__icon">
+                                    <use xlink:href="#phone"></use>
+                                </svg>
+                            </div>
+
+                            <div class="footer__phones-block">
+                                <a href="tel:+79283471718" class="phone-link footer__phone-link d-flex">+7 928
+                                    347-17-18</a>
+                                <a href="tel:+79624425595" class="phone-link footer__phone-link d-flex">+7 962
+                                    442-55-95</a>
+                                <a href="tel:+78793396539" class="phone-link footer__phone-link d-flex">+7 8793 39-65-39
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="footer__address-block d-flex">
+                            <div class="address__icon">
+                                <svg class="place__icon">
+                                    <use xlink:href="#place"></use>
+                                </svg>
+                            </div>
+
+                            <div class="footer__address">г. Пятигорск,<br>ул. Краснослободская<br>д. 13</div>
+                        </div>
+                    </div>
+
+                    <div class="footer__navigation">
+                        <div class="footer__general-menu d-flex">
+                            <a href="#" class="general-menu__link">О фабрике</a>
+                            <a href="#" class="general-menu__link">Статьи</a>
+                            <a href="#" class="general-menu__link">Вопрос-ответ</a>
+                            <a href="#" class="general-menu__link">Отзывы</a>
+                            <a href="#" class="general-menu__link">Контакты</a>
+                            <a href="#" class="general-menu__link">Пошив на заказ</a>
+                            <a href="#" class="general-menu__link general-menu__link-discount">Скидки</a>
+                        </div>
+
+                        <div class="footer__categories d-flex">
+
+                            <div class="footer__categories-menu footer__fur-coats-menu">
+                                <h2 class="footer__menu-name">Шубы</h2>
+                                <div class="categories-menu__links">
+                                    <a href="#" class="categories-menu__link">Шубы из норки</a>
+                                    <a href="#" class="categories-menu__link">Цветные шубы</a>
+                                    <a href="#" class="categories-menu__link">Шубы из мутона</a>
+                                    <a href="#" class="categories-menu__link">Шубы из чернобурки</a>
+                                    <a href="#" class="categories-menu__link">Шубы из астрагана</a>
+                                    <a href="#" class="categories-menu__link">Шубы из соболя</a>
+                                    <a href="#" class="categories-menu__link">Шубы из песца</a>
+                                    <a href="#" class="categories-menu__link">Шубы из нутрии</a>
+                                    <a href="#" class="categories-menu__link">Шубы из каракуля</a>
+                                    <a href="#" class="categories-menu__link">Шубы комбинированные</a>
+                                </div>
+                            </div>
+
+                            <div class="footer__categories-menu footer__sheepskin-menu">
+                                <h2 class="footer__menu-name">Дубленки</h2>
+                                <div class="categories-menu__links">
+                                    <a href="#" class="categories-menu__link">Шубы из норки</a>
+                                    <a href="#" class="categories-menu__link">Цветные шубы</a>
+                                    <a href="#" class="categories-menu__link">Шубы из мутона</a>
+                                    <a href="#" class="categories-menu__link">Шубы из чернобурки</a>
+                                    <a href="#" class="categories-menu__link">Шубы из астрагана</a>
+                                    <a href="#" class="categories-menu__link">Шубы из соболя</a>
+                                    <a href="#" class="categories-menu__link">Шубы из песца</a>
+                                    <a href="#" class="categories-menu__link">Шубы из нутрии</a>
+                                </div>
+                            </div>
+
+                            <div class="footer__categories-menu footer__fur-vests-menu">
+                                <h2 class="footer__menu-name">Меховые жилеты</h2>
+                                <div class="categories-menu__links">
+                                    <a href="#" class="categories-menu__link">Шубы из норки</a>
+                                    <a href="#" class="categories-menu__link">Цветные шубы</a>
+                                    <a href="#" class="categories-menu__link">Шубы из мутона</a>
+                                    <a href="#" class="categories-menu__link">Шубы из чернобурки</a>
+                                    <a href="#" class="categories-menu__link">Шубы из астрагана</a>
+                                </div>
+                            </div>
+
+                            <div class="footer__categories-menu footer__leather-products-menu">
+                                <h2 class="footer__menu-name">Изделия из кожи</h2>
+                                <div class="categories-menu__links">
+                                    <a href="#" class="categories-menu__link">Шубы из норки</a>
+                                    <a href="#" class="categories-menu__link">Цветные шубы</a>
+                                    <a href="#" class="categories-menu__link">Шубы из мутона</a>
+                                    <a href="#" class="categories-menu__link">Шубы из чернобурки</a>
+                                    <a href="#" class="categories-menu__link">Шубы из астрагана</a>
+                                    <a href="#" class="categories-menu__link">Шубы из соболя</a>
+                                    <a href="#" class="categories-menu__link">Шубы из песца</a>
+                                    <a href="#" class="categories-menu__link">Шубы из нутрии</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__map d-flex">
+                <div class="map__btn-path d-flex">
+                    Карта проезда
+                    <div class="btn-path__arrow">
+                        <div class="arrow__part-1"></div>
+                        <div class="arrow__part-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__copyrights">
+                <div class="container copyrights__content d-flex">
+                    <p>© Меховая фабрика «Эдита», 2018</p>
+                    <p><a href="#" class="copyrights__link">Пользовательское соглашение</a> | <a href="#"
+                            class="copyrights__link">Политика конфиденциальности</a></p>
+                    <p>Сделано WEBELEMENT</p>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>
